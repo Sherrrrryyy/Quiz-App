@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
 
 
-        <div class="input" id="form">
-<input type="text" placeholder="Enter your Name" name="" id="name">
-<br />
-<span class="hide" id="nameError">Name required!</span>
-<br />
-<input type="number" placeholder="Enter your Roll No" name="" id="rollNo">
-<br />
-<span class="hide" id="rollError">RollNo required!</span>
-<br />
-<input type="text" placeholder="Enter your Email" name="" id="email">
-<br />
-<span class="hide" id="emailError">Email required!</span>
-<br />
-<button onclick="startQuiz()">START</button>
-        </div>
 
-    <div id="quizstart" class="hide">
+    <div class="input" id="form">
+        <input type="text" placeholder="Enter your Name" name="" id="name">
+        <br />
+        <span class="hide" id="nameError">Name required!</span>
+        <br />
+        <input type="number" placeholder="Enter your Roll No" name="" id="rollNo">
+        <br />
+        <span class="hide" id="rollError">RollNo required!</span>
+        <br />
+        <input type="text" placeholder="Enter your Email" name="" id="email">
+        <br />
+        <span class="hide" id="emailError">Email required!</span>
+        <br />
+        <button onclick="startQuiz()">START</button>
+    </div>
+
+    <div style="padding: 10px; display: flex; justify-content: center; margin-top: 400px;" id="quizstart" class="hide">
 
         <a href="./quiz.html">
-            <button style="padding: 10px; display: flex; justify-content: center; margin-top: 400px;">QUIZ START?</button>
+            <button style="    width: 100%;
+            margin: 15px auto;
+            color: #001e4d;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #fff;
+            font-size: 12px;
+            ">QUIZ START?</button>
         </a>
 
     </div>
@@ -42,4 +52,5 @@
 </body>
 
 <script src="app.js"></script>
+
 </html>

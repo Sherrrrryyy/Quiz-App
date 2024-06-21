@@ -103,30 +103,114 @@ var Question = document.getElementById("Question")
 var options = document.getElementById("options")
 indexNum = 0
 
+
 var static = document.getElementById("static")
 var dynamic = document.getElementById("dynamic")
 dynamic.innerHTML = questions.length
 
+
+
+
 function startQuiz() {
+
     // console.log("Startquiz")
     Question.innerHTML = questions[indexNum].question
     options.innerHTML = ""
-
+    var lastClick = document.getElementById('lastClick')
+    lastClick.disabled = "none"
+    var sumbitBtn = document.getElementById("sumbitBtn")
+    sumbitBtn.disabled = "none"
     for (var key in questions[indexNum].options) {
         // console.log(questions[indexNum].options[key])
         var mulOption = questions[indexNum].options[key]
-        options.innerHTML += `<li>${mulOption}</li>`
+        options.innerHTML += `<li onclick="answerCheck(this)">${mulOption}</li>`
     }
-
 
 }
 
 function nextQuest() {
+
+
     if (indexNum < questions.length - 1) {
         indexNum++
         static.innerHTML++
         startQuiz()
+    }
 
+    var sumbitBtn = document.getElementById("sumbitBtn")
+    var lastClick = document.getElementById("lastClick")
+    if (indexNum === 6) {
+        sumbitBtn.className = "show"
+        lastClick.className = "hide"
+    } else {
+        sumbitBtn.className = "hide"
+        lastClick.className = "show"
     }
 
 }
+
+rightAnswersCount = 0
+wrongAnswersCount = 0
+
+function answerCheck(ele) {
+
+    var listOption = options.getElementsByTagName("li")
+    var checkAns = ele.innerHTML === questions[indexNum].answer
+    var lastClick = document.getElementById('lastClick')
+    lastClick.disabled = ""
+    var sumbitBtn = document.getElementById("sumbitBtn")
+    sumbitBtn.disabled = ""
+    var rightAnswers = document.getElementById('rightAnswers')
+    var wrongAnswers = document.getElementById('wrongAnswers')
+    if (checkAns) {
+        ele.className = "right"
+        rightAnswersCount++
+        rightAnswers.innerHTML = rightAnswersCount
+    } else {
+        ele.className = "wrong"
+        wrongAnswersCount++
+        wrongAnswers.innerHTML = wrongAnswersCount
+    }
+
+    for (var li of listOption) {
+        if (li.innerHTML === questions[indexNum].answer) {
+            li.className = "right"
+        }
+    }
+    for (var li of listOption) {
+        li.style.cursor = "pointer"
+    }
+}
+
+
+function showResult() {
+    var result = document.getElementById("result")
+    result.className = "show"
+    sumbitBtn.className = "hide"
+
+    var hideQuiz = document.getElementById('hideQuiz')
+    hideQuiz.className = "hide"
+    // console.log(hideQuiz)
+}
+
+let minutes = 1;
+let seconds = 0;
+
+function startTimer() {
+    var timerInterval = setInterval(function () {
+        seconds--
+        if (seconds < 0) {
+            minutes--;
+            seconds = 59;
+        }
+        if (minutes < 0) {
+        
+            clearInterval(timerInterval);
+        
+        }
+        document.getElementById("min").innerHTML = minutes + ":"
+        document.getElementById("sec").innerHTML = seconds
+    }, 1000);
+}
+
+startTimer();

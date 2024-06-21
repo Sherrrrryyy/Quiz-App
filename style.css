@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: poppins, sans-serif;
-    color: #001e4d;
+    /* color: #001e4d; */
     font-weight: 500px;
 }
 
@@ -63,7 +63,7 @@ body {
     justify-content: space-around;
     margin-top: 100px;
     padding: 10px;
-border-bottom: 1px solid #001e4d;
+    border-bottom: 1px solid #001e4d;
 }
 
 .headers {
@@ -76,7 +76,9 @@ border-bottom: 1px solid #001e4d;
     justify-content: space-around;
     margin-top: 100px;
     padding: 10px;
-border-bottom: 1px solid #001e4d;
+    border-bottom: 1px solid #001e4d;
+    color: #001e4d;
+
 }
 
 .header span {
@@ -89,28 +91,29 @@ border-bottom: 1px solid #001e4d;
     background: #fff;
     max-width: 600px;
     margin: 0 auto;
-    /* border: 1px solid red; */
     padding: 20px;
     list-style-position: inside;
     border-bottom: 1px solid #001e4d;
 
 }
 
-.body h3{
+.body h3 {
     font-size: 25px;
     padding-bottom: 30px;
+    color: #001e4d;
+
 }
 
 
-.body ol li{
+.body ol li {
 
-font-size: 17px;
-background: #001e4d;
-color: #fff;
-padding: 10px;    
-margin: 10px 0;
-border-radius: 4px;
-cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    color: #001e4d;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .footer {
@@ -122,5 +125,74 @@ cursor: pointer;
     padding: 20px;
     display: flex;
     justify-content: space-around;
-align-items: center;
+    align-items: center;
+}
+
+.right {
+    background-color: green;
+    color: white;
+}
+
+.wrong {
+    background-color: red;
+    color: white;
+}
+
+.sumbit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #001e4d;
+    font-size: 12px;
+    color: #fff
+}
+
+/* .result {
+    background: #fff;
+    border-radius: 10px 10px 10px 10px;
+    margin: 0 auto;
+    margin-top: -500px;
+    padding: 10px;
+border-bottom: 1px solid #001e4d;
+} */
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: -500px;
+    background: #fff;
+    border-radius: 10px 10px 10px 10px;
+    border-bottom: 1px solid #001e4d;
+    height: 550px;
+}
+
+.result h1 {
+    font-size: 40px;
+    color: #001e4d;
+    padding-bottom: 15px;
+}
+
+.result h4 {
+    font-size: 20px;
+    color: #001e4d;
+    font-weight: bold;
+    padding-bottom: 15px;
+
+}
+
+.result p {
+    color: #001e4d;
+    font-size: 18px;
+}
+
+.result span {
+    color: green;
+    font-weight: bold;
 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="startQuiz()">
+<body id="hideQuiz" onload="startQuiz()">
 
 
     <!-- header -->
@@ -32,7 +32,9 @@
         </div>
         <div>
             <span>Timer</span>
-            <span id="timer">00:00</span>
+            <span id="min">01:</span>
+            <span id="sec">00</span>
+
         </div>
     </div>
     <!-- header -->
@@ -76,18 +78,35 @@
             font-size: 12px;
             color: #fff;">Next Question</button>
 
-            <button onclick="sumbitQuiz()" style="width: 100%; margin: 15px auto; margin-left: 15px; padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #001e4d;
-            font-size: 12px;
-            color: #fff;"><a style="color: white; text-decoration: none;" href="sumbit.html">Sumbit Quiz</a></button>
+            <button onclick="showResult()" id="sumbitBtn" class="hide" style="width: 40%;
+display: flex;
+justify-content: center;
+margin: 15px auto;
+padding: 10px;
+border-radius: 5px;
+border: none;
+background-color: #001e4d;
+font-size: 12px;
+color: #fff;">Sumbit</button>
         </div>
 
     </div>
     </div>
 
-    <!--footer-->
+
+    <div id="result" class="hide">
+        <div class="result">
+            <img src="./img/TR.png" width="300px" height="300px" alt="">
+            <h1>Congrats!</h1>
+            <h4>Quiz completed succesfully </h4>
+            <p>You attemp <span>7 question</span> and from that <span id="rightAnswers">answers</span> is correct</p>
+
+            <p>share with us:</p>
+        </div>
+
+
+    </div>
+
 
 
 </body>
